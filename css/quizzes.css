@@ -1,0 +1,652 @@
+/* Стили для страницы викторин */
+
+/* Контейнер */
+.quizzes-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Приветствие */
+.quizzes-intro {
+    margin-bottom: 40px;
+}
+
+.intro-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 25px;
+    padding: 40px;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #ff9a9e, #0fa, #a1c4fd);
+}
+
+.intro-icon {
+    font-size: 4rem;
+    color: #0fa;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.intro-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+.intro-card p {
+    font-size: 1.1rem;
+    color: #b0e0e6;
+    max-width: 800px;
+    margin: 0 auto 25px;
+    line-height: 1.6;
+}
+
+.rules {
+    text-align: left;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 25px;
+}
+
+.rules h3 {
+    color: #0fa;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rules ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.rules li {
+    padding: 8px 0;
+    color: #b0e0e6;
+    position: relative;
+    padding-left: 25px;
+}
+
+.rules li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #0fa;
+    font-weight: bold;
+}
+
+/* Заголовки секций */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #ffd700;
+    text-align: center;
+    margin: 50px 0 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.section-title::before,
+.section-title::after {
+    content: '';
+    flex: 1;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #b0e0e6;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+/* Сетка викторин */
+.quiz-numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.extra-grid {
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+}
+
+/* Карточка с цифрой */
+.quiz-number-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 25px;
+    padding: 25px;
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    min-height: 180px;
+    height: 100%;
+}
+
+.quiz-number-card:hover {
+    transform: translateY(-10px);
+    border-color: #0fa;
+    box-shadow: 0 20px 40px rgba(0, 255, 170, 0.3);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.quiz-number-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 154, 158, 0.1), rgba(0, 255, 170, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.quiz-number-card:hover::before {
+    opacity: 1;
+}
+
+/* Круг с цифрой */
+.number-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s ease;
+}
+
+.quiz-number-card:hover .number-circle {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #0a2e38;
+}
+
+/* Цвета для разных номеров */
+.quiz-number-card[data-number="1"] .number-circle {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    box-shadow: 0 10px 30px rgba(255, 154, 158, 0.4);
+}
+
+.quiz-number-card[data-number="2"] .number-circle {
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    box-shadow: 0 10px 30px rgba(161, 196, 253, 0.4);
+}
+
+.quiz-number-card[data-number="3"] .number-circle {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+}
+
+.quiz-number-card[data-number="4"] .number-circle {
+    background: linear-gradient(135deg, #0fa, #0af);
+    box-shadow: 0 10px 30px rgba(0, 255, 170, 0.4);
+}
+
+.quiz-number-card[data-number="5"] .number-circle {
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+    box-shadow: 0 10px 30px rgba(155, 89, 182, 0.4);
+}
+
+.quiz-number-card[data-number="6"] .number-circle {
+    background: linear-gradient(135deg, #e74c3c, #e67e22);
+    box-shadow: 0 10px 30px rgba(231, 76, 60, 0.4);
+}
+
+.quiz-number-card[data-number="7"] .number-circle {
+    background: linear-gradient(135deg, #1abc9c, #2ecc71);
+    box-shadow: 0 10px 30px rgba(26, 188, 156, 0.4);
+}
+
+.quiz-number-card[data-number="8"] .number-circle {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    box-shadow: 0 10px 30px rgba(52, 152, 219, 0.4);
+}
+
+.quiz-number-card[data-number="9"] .number-circle {
+    background: linear-gradient(135deg, #f1c40f, #f39c12);
+    box-shadow: 0 10px 30px rgba(241, 196, 15, 0.4);
+}
+
+.quiz-number-card[data-number="10"] .number-circle {
+    background: linear-gradient(135deg, #e84393, #fd79a8);
+    box-shadow: 0 10px 30px rgba(232, 67, 147, 0.4);
+}
+
+/* Информация о викторине */
+.quiz-info {
+    flex: 1;
+    z-index: 2;
+    min-width: 0; /* Важно для правильного обрезания текста */
+}
+
+.quiz-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: #ffd700;
+    margin-bottom: 8px;
+    line-height: 1.3;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.quiz-info p {
+    color: #b0e0e6;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 2.8em; /* Минимальная высота для 2 строк */
+}
+
+.quiz-stats {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.quiz-stats span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #0fa;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 4px 10px;
+    background: rgba(0, 255, 170, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 255, 170, 0.2);
+}
+
+.quiz-stats i {
+    font-size: 0.8rem;
+}
+
+/* Дополнительные викторины */
+.extra-quizzes {
+    margin-top: 60px;
+}
+
+.quiz-number-card.extra {
+    border: 3px solid #ffd700;
+    background: rgba(255, 215, 0, 0.05);
+}
+
+.quiz-number-card.extra:hover {
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+}
+
+/* Инструкция */
+.instructions {
+    margin-top: 60px;
+}
+
+.instruction-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 25px;
+    padding: 40px;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.instruction-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #0fa;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.step {
+    text-align: center;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0fa, #0af);
+    color: #0a2e38;
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    box-shadow: 0 8px 20px rgba(0, 255, 170, 0.3);
+}
+
+.step p {
+    color: #b0e0e6;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.note {
+    background: rgba(255, 154, 158, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+    border-left: 4px solid #ff9a9e;
+}
+
+.note i {
+    font-size: 1.5rem;
+    color: #ff9a9e;
+    flex-shrink: 0;
+}
+
+.note p {
+    color: #ffd700;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Кнопка возврата */
+.back-to-home {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(45deg, #0fa, #0af);
+    color: #0a2e38;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.back-btn:hover {
+    background: linear-gradient(45deg, #0af, #0fa);
+    box-shadow: 0 0 25px rgba(0, 255, 170, 0.7);
+    transform: translateY(-3px);
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .quizzes-container {
+        padding: 15px;
+    }
+    
+    .intro-card {
+        padding: 25px;
+    }
+    
+    .intro-card h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .section-title::before,
+    .section-title::after {
+        display: none;
+    }
+    
+    .quiz-numbers-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .extra-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .quiz-number-card {
+        flex-direction: row;
+        text-align: left;
+        padding: 20px;
+        align-items: flex-start;
+    }
+    
+    .number-circle {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .number {
+        font-size: 2.5rem;
+    }
+    
+    .quiz-info h3 {
+        font-size: 1.4rem;
+        margin-bottom: 6px;
+    }
+    
+    .quiz-info p {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+    
+    .quiz-stats {
+        gap: 10px;
+    }
+    
+    .quiz-stats span {
+        font-size: 0.8rem;
+        padding: 3px 8px;
+    }
+    
+    .steps {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .instruction-card {
+        padding: 25px;
+    }
+    
+    .note {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .note p {
+        text-align: center;
+    }
+    
+    /* Фиксированная навигация */
+    .header {
+        padding-top: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .quizzes-container {
+        padding: 10px;
+    }
+    
+    .intro-card,
+    .instruction-card {
+        padding: 20px;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .quiz-number-card {
+        padding: 18px;
+        gap: 15px;
+    }
+    
+    .number-circle {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .number {
+        font-size: 2.2rem;
+    }
+    
+    .quiz-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .quiz-info p {
+        font-size: 0.85rem;
+        min-height: 2.5em;
+    }
+    
+    .quiz-stats {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .quiz-stats span {
+        width: fit-content;
+    }
+    
+    .header {
+        padding-top: 70px;
+    }
+}
+
+/* Ландшафтная ориентация */
+@media (max-width: 768px) and (orientation: landscape) {
+    .quiz-numbers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .quiz-number-card {
+        min-height: 160px;
+    }
+    
+    .quiz-info p {
+        min-height: 1.4em;
+    }
+}
+
+/* Для очень маленьких телефонов */
+@media (max-width: 360px) {
+    .quiz-number-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .quiz-info {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .quiz-stats {
+        justify-content: center;
+    }
+}
+
+/* Анимация появления */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.quiz-number-card {
+    animation: fadeInUp 0.6s ease backwards;
+}
+
+/* Анимация для каждой карточки с задержкой */
+.quiz-number-card:nth-child(1) { animation-delay: 0.1s; }
+.quiz-number-card:nth-child(2) { animation-delay: 0.2s; }
+.quiz-number-card:nth-child(3) { animation-delay: 0.3s; }
+.quiz-number-card:nth-child(4) { animation-delay: 0.4s; }
+.quiz-number-card:nth-child(5) { animation-delay: 0.5s; }
+.quiz-number-card:nth-child(6) { animation-delay: 0.6s; }
+.quiz-number-card:nth-child(7) { animation-delay: 0.7s; }
+.quiz-number-card:nth-child(8) { animation-delay: 0.8s; }
+.quiz-number-card:nth-child(9) { animation-delay: 0.9s; }
+.quiz-number-card:nth-child(10) { animation-delay: 1s; }
+
+/* Улучшения для длинных названий */
+.long-title {
+    font-size: 1.4rem !important;
+    line-height: 1.2 !important;
+}
+
+.long-description {
+    min-height: 1.4em !important;
+}

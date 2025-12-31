@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Итоги 2025 года</title>
+    
+    <!-- PWA Мета-теги -->
+    <meta name="theme-color" content="#0a2e38">
+    <meta name="description" content="Семейный архив: фото, викторины и воспоминания 2025 года">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Семья 2025">
+    
+    <!-- Манифест PWA -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Иконки -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/icon-192.png">
+    
+    <!-- Основные стили -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Иконки Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка сайта -->
+        <header class="header">
+            <div class="snowflakes"></div>
+            
+            <!-- Навигация -->
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link active">
+                    <i class="fas fa-home"></i> Главная
+                </a>
+                <a href="quizzes.html" class="nav-link">
+                    <i class="fas fa-gamepad"></i> Играть
+                </a>
+                </a>        
+                <a href="statistics/2025.html" class="nav-link">
+                    <i class="fas fa-trophy"></i> Статистика
+                </a>    
+                <div class="years-dropdown">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i> Годы
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="statistics/2025.html">2025</a>
+                        <a href="statistics/2026.html">2026</a>
+                    </div>
+                </div>
+            </nav>
+            
+            <div class="year-title">
+                <h1>2025</h1>
+                <p class="subtitle">Путешествие по месяцам года</p>
+            </div>
+            <div class="decoration">
+                <div class="ornament left"></div>
+                <div class="ornament right"></div>
+            </div>
+        </header>
+
+        <!-- Основное содержимое -->
+        <main class="main-content">
+            <div class="intro">
+                <h2><i class="fas fa-star"></i> Добро пожаловать в наш семейный проект!</h2>
+                <p>Этот сайт создан, чтобы вспомнить самые яркие моменты уходящего года. Каждый месяц — это отдельная история с фотографиями и воспоминаниями. Нажмите на любой месяц, чтобы погрузиться в его атмосферу.</p>
+            </div>
+
+            <!-- Сетка месяцев -->
+            <div class="months-grid">
+                <!-- Месяцы будут сгенерированы JavaScript -->
+            </div>
+
+            <!-- Новогодний отсчет -->
+            <div class="countdown">
+                <h3><i class="fas fa-clock"></i> До нового года осталось:</h3>
+                <div class="countdown-timer">
+                    <div class="time-block">
+                        <span id="days">00</span>
+                        <p>дней</p>
+                    </div>
+                    <div class="time-block">
+                        <span id="hours">00</span>
+                        <p>часов</p>
+                    </div>
+                    <div class="time-block">
+                        <span id="minutes">00</span>
+                        <p>минут</p>
+                    </div>
+                    <div class="time-block">
+                        <span id="seconds">00</span>
+                        <p>секунд</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Подвал -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>Сайт создан с ❤️ и новогодним настроением для вас</p>
+                <p>© Итоги 2025 года. Все права на изображения принадлежат нашей семье.</p>
+                <div class="social-icons">
+                    <a href="https://vk.me/join/PnApvZS/Sh/1WJhslv2ddvYhmjhIepcSn8o=" target="_blank" rel="noopener noreferrer" title="ВКонтакте">
+                        <i class="fab fa-vk"></i>
+                    </a>
+                    <a href="https://t.me/+kh3aiyeQ-wQzMTNi" target="_blank" rel="noopener noreferrer" title="Telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="js/main.js"></script>
+    <script src="js/mobile-optimization.js"></script>
+    <script src="js/holiday.js"></script>
+    
+    <!-- PWA скрипт -->
+    <script>
+        // PWA установка
+        let deferredPrompt;
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Предотвращаем автоматическое отображение подсказки
+            e.preventDefault();
+            // Сохраняем событие для использования позже
+            deferredPrompt = e;
+            
+            // Показываем кнопку установки
+            showInstallButton();
+        });
+        
+        function showInstallButton() {
+            // Создаем кнопку установки
+            const installBtn = document.createElement('button');
+            installBtn.innerHTML = '<i class="fas fa-download"></i> Установить приложение';
+            installBtn.className = 'install-btn';
+            installBtn.style.cssText = `
+                background: linear-gradient(45deg, #0fa, #0af);
+                color: #0a2e38;
+                border: none;
+                padding: 12px 25px;
+                border-radius: 50px;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                margin: 20px auto;
+                cursor: pointer;
+                box-shadow: 0 5px 15px rgba(0,255,170,0.3);
+                animation: pulse 2s infinite;
+                font-family: 'Montserrat', sans-serif;
+            `;
+            
+            // Добавляем стили для анимации
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes pulse {
+                    0% { transform: scale(1); }
+                    50% { transform: scale(1.05); }
+                    100% { transform: scale(1); }
+                }
+                
+                .install-btn:hover {
+                    background: linear-gradient(45deg, #0af, #0fa);
+                    box-shadow: 0 0 20px rgba(0,255,170,0.5);
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Обработчик клика
+            installBtn.addEventListener('click', async () => {
+                if (!deferredPrompt) return;
+                
+                // Показываем диалог установки
+                deferredPrompt.prompt();
+                
+                // Ждем ответ пользователя
+                const { outcome } = await deferredPrompt.userChoice;
+                
+                if (outcome === 'accepted') {
+                    console.log('Пользователь установил PWA');
+                } else {
+                    console.log('Пользователь отказался от установки');
+                }
+                
+                // Очищаем ссылку
+                deferredPrompt = null;
+                
+                // Скрываем кнопку
+                installBtn.style.display = 'none';
+            });
+            
+            // Добавляем кнопку перед подвалом
+            const footer = document.querySelector('.footer');
+            footer.parentNode.insertBefore(installBtn, footer);
+        }
+        
+        // Регистрация Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('✅ Service Worker зарегистрирован:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('❌ Ошибка регистрации Service Worker:', error);
+                    });
+            });
+        }
+        
+        // Проверка, установлено ли приложение
+        window.addEventListener('appinstalled', () => {
+            console.log('🎉 PWA установлено!');
+            deferredPrompt = null;
+        });
+    </script>
+</body>
+</html>

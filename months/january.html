@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Январь 2025 - Итоги года</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/months.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="apple-touch-icon" href="../images/favicon.png">
+    <style>
+        /* Локальные стили, которые гарантированно переопределят любые другие */
+        .month-header {
+            background: linear-gradient(135deg, rgba(10, 46, 56, 0.9) 0%, rgba(26, 26, 46, 0.9) 50%, rgba(22, 33, 62, 0.9) 100%) !important;
+            border: 2px solid #0fa !important;
+        }
+        
+        .month-header::before,
+        .month-header::after {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка страницы месяца -->
+        <header class="month-header">
+            <div class="snowflakes"></div>
+            <div class="month-title">
+                <h1>Январь</h1>
+                <span class="year">2025</span>
+            </div>
+            <p class="month-description">Самые лучшие и популярные фразы/события этого месяца.</p>
+        </header>
+
+        <!-- Основное содержимое -->
+        <main class="month-content">
+            <!-- Основные события -->
+            <section class="highlights">
+                <h2><i class="fas fa-bullhorn"></i> Основные события января</h2>
+                <ul class="highlights-list">
+                    <li><i class="fas fa-star"></i> "Десять долларов" - Бабушка / самая крутая фраза</li>
+                    <li><i class="fas fa-star"></i> Магнитные бури / самая популярная фраза</li>
+                    <li><i class="fas fa-star"></i> Крещение / событие месяца</li>
+                </ul>
+            </section>
+
+            <!-- Фотогалерея -->
+            <section class="highlights">
+                <h2><i class="fas fa-camera"></i> Фотографии января</h2>
+                <div class="photos-grid">
+                    <div class="photo-item">
+                        <img src="../images/january1.jpg" alt="Новогодний салют" class="photo-image">
+                        <div class="photo-caption"></div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="../images/january2.jpg" alt="Крещенские купания" class="photo-image">
+                        <div class="photo-caption"></div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="../images/january3.jpg" alt="Зимний фестиваль" class="photo-image">
+                        <div class="photo-caption"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Итоги месяца -->
+            <section class="highlights">
+                <h2><i class="fas fa-chart-line"></i> Итоги января</h2>
+                <p>По информации новостей от Мамы: в России распространяется грипп, который всего за сутки может привести к пневмонии. Этот штамм представляет серьёзную опасность.</p>
+                <p>По информации Мамы 4 января, произойдёт шесть сильных вспышек - одна из них относится к высшему классу Х. Это вторая мощная вспышка с начала января.</p>
+                <p>Меня с Ларисой мама позвала кушать тортик в Щербинку, который ей подарили на работе, мы так и не смогли приехать.</p>
+            </section>
+        </main>
+
+        <!-- Подвал страницы -->
+        <footer class="month-footer">
+            <button class="back-btn"><i class="fas fa-arrow-left"></i> Вернуться на главную</button>
+            <p>© Итоги января 2025 года. Все права на изображения принадлежат нашей семье.</p>
+        </footer>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="../js/months.js"></script>
+    <script src="../js/holiday.js"></script>
+</body>
+</html>
+

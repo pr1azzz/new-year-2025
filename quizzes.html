@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Семейные викторины 2025</title>
+    
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon.png">
+    
+    <!-- Основные стили -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Стили для викторин -->
+    <link rel="stylesheet" href="css/quizzes.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Иконки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка с навигацией -->
+        <header class="header">
+            <div class="snowflakes"></div>
+            
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i> Главная
+                </a>
+                <a href="quizzes.html" class="nav-link active">
+                    <i class="fas fa-gamepad"></i> Играть
+                </a>
+                <a href="statistics/2025.html" class="nav-link">
+                    <i class="fas fa-trophy"></i> Статистика
+                </a>
+                <div class="years-dropdown">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i> Годы
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="statistics/2025.html">2025</a>
+                        <a href="statistics/2026.html">2026</a>
+                    </div>
+                </div>
+            </nav>
+            
+            <div class="year-title">
+                <h1>Семейные викторины</h1>
+                <p class="subtitle">Выберите викторину и играйте вместе!</p>
+            </div>
+            
+            <div class="decoration">
+                <div class="ornament left"></div>
+                <div class="ornament right"></div>
+            </div>
+        </header>
+
+        <!-- Основное содержимое викторин -->
+        <main class="quizzes-container">
+            <!-- Приветствие -->
+            <section class="quizzes-intro">
+                <div class="intro-card">
+                    <div class="intro-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h2>Добро пожаловать в мир викторин!</h2>
+                    <p>Здесь собраны все наши семейные викторины. Выбирайте любую, нажимайте на цифру и начните играть прямо сейчас!</p>
+                    <div class="rules">
+                        <h3><i class="fas fa-info-circle"></i> Правила:</h3>
+                        <ul>
+                            <li>Кликайте на цифру для перехода к викторине</li>
+                            <li>Викторины открываются в новой вкладке</li>
+                            <li>После прохождения возвращайтесь на сайт</li>
+                            <li>Результаты учитываются в статистике</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Основной раздел викторин -->
+            <section class="main-quizzes">
+                <h2 class="section-title">
+                    <i class="fas fa-star"></i> Основные викторины
+                </h2>
+                <p class="section-subtitle">7 главных викторин на различные темы</p>
+                
+                <div class="quiz-numbers-grid">
+                    <!-- Викторина 1 -->
+                    <a href="https://play.myquiz.ru/p/00952083" target="_blank" class="quiz-number-card" data-number="1">
+                        <div class="number-circle">
+                            <span class="number">1</span>
+                        </div>
+                        <div class="quiz-info">
+                            <h3>Викторина 1</h3>
+                            <p>Правда или Ложь</p>
+                            <div class="quiz-stats">
+                                <span><i class="fas fa-question"></i> 15 вопросов</span>
+                                <span><i class="fas fa-clock"></i> 10 мин</span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Викторина 2 -->
+                    <a href="https://play.myquiz.ru/p/00952068" target="_blank" class="quiz-number-card" data-number="2">
+                        <div class="number-circle">
+                            <span class="number">2</span>
+                        </div>
+                        <div class="quiz-info">
+                            <h3>Викторина 2</h3>
+                            <p>Животные: кто есть кто?</p>
+                            <div class="quiz-stats">
+                                <span><i class="fas fa-question"></i> 10 вопросов</span>
+                                <span><i class="fas fa-clock"></i> 10 мин</span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Викторина 3 -->
+                    <a href="https://play.myquiz.ru/p/00952110" target="_blank" class="quiz-number-card" data-number="3">
+                        <div class="number-circle">
+                            <span class="number">3</span>
+                        </div>
+                        <div class="quiz-info">
+                            <h3>Викторина 3</h3>
+                            <p>Правда или Ложь</p>
+                            <div class="quiz-stats">
+                                <span><i class="fas fa-question"></i> 15 вопросов</span>
+                                <span><i class="fas fa-clock"></i> 10 мин</span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Викторина 4 -->
+                    <a href="https://play.myquiz.ru/p/00952127" target="_blank" class="quiz-number-card" data-number="4">
+                        <div class="number-circle">
+                            <span class="number">4</span>
+                        </div>
+                        <div class="quiz-info">
+                            <h3>Викторина 4</h3>
+                            <p>Самые странные животные и растения</p>
+                            <div class="quiz-stats">
+                                <span><i class="fas fa-question"></i> 10 вопросов</span>
+                                <span><i class="fas fa-clock"></i> 10 мин</span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Викторина 5 -->
+                    <a href="https://play.myquiz.ru/p/00952150" target="_blank" class="quiz-number-card" data-number="5">
+                        <div class="number-circle">
+                            <span class="number">5</span>
+                        </div>
+                        <div class="quiz-info">
+                            <h3>Викторина 5</h3>
+                            <p>Выберите лишнее</p>
+                            <div class="quiz-stats">
+                                <span><i class="fas fa-question"></i> 10 вопросов</span>
+                                <span><i class="fas fa-clock"></i> 10 мин</span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Викторина 6 -->
+                    <a href="https://play.myquiz.ru/p/00952198" target="_blank" class="quiz-number-card" data-number="6">
+                        <div class="number-circle">
+                            <span class="number">6</span>
+                        </div>
+                        <div class="quiz-info">
+                            <h3>Викторина 6</h3>
+                            <p>Вопросы обо всём</p>
+                            <div class="quiz-stats">
+                                <span><i class="fas fa-question"></i> 20 вопросов</span>
+                                <span><i class="fas fa-clock"></i> 15 мин</span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Викторина 7 -->
+                    <a href="https://play.myquiz.ru/p/00952254" target="_blank" class="quiz-number-card" data-number="7">
+                        <div class="number-circle">
+                            <span class="number">7</span>
+                        </div>
+                        <div class="quiz-info">
+                            <h3>Викторина 7</h3>
+                            <p>Угадай число</p>
+                            <div class="quiz-stats">
+                                <span><i class="fas fa-question"></i> 11 вопросов</span>
+                                <span><i class="fas fa-clock"></i> 10 мин</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Дополнительный раздел викторин -->
+            <section class="extra-quizzes">
+                <h2 class="section-title">
+                    <i class="fas fa-gem"></i> Дополнительные викторины
+                </h2>
+                <p class="section-subtitle">3 специальные викторины для настоящих знатоков</p>
+                
+                <div class="quiz-numbers-grid extra-grid">
+                    <!-- Викторина 8 -->
+                    <a href="https://play.myquiz.ru/p/00952244" target="_blank" class="quiz-number-card extra" data-number="8">
+                        <div class="number-circle">
+                            <span class="number">8</span>
+                        </div>
+                        <div class="quiz-info">
+                            <h3>Викторина дополнительная</h3>
+                            <p>Мультфильмы</p>
+                            <div class="quiz-stats">
+                                <span><i class="fas fa-question"></i> 9 вопроса</span>
+                                <span><i class="fas fa-clock"></i> 10 мин</span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Викторина 9 -->
+                    <a href="https://play.myquiz.ru/p/00952238" target="_blank" class="quiz-number-card extra" data-number="9">
+                        <div class="number-circle">
+                            <span class="number">9</span>
+                        </div>
+                        <div class="quiz-info">
+                            <h3>Викторина дополнительная</h3>
+                            <p>Эпоха 80-х</p>
+                            <div class="quiz-stats">
+                                <span><i class="fas fa-question"></i> 9 вопросов</span>
+                                <span><i class="fas fa-clock"></i> 10 мин</span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Викторина 10 -->
+                    <a href="https://play.myquiz.ru/p/00952937" target="_blank" class="quiz-number-card extra" data-number="10">
+                        <div class="number-circle">
+                            <span class="number">10</span>
+                        </div>
+                        <div class="quiz-info">
+                            <h3>Викторина дополнительная</h3>
+                            <p>Новогодняя</p>
+                            <div class="quiz-stats">
+                                <span><i class="fas fa-question"></i> 11 вопросов</span>
+                                <span><i class="fas fa-clock"></i> 10 мин</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            <!-- Кнопка возврата -->
+            <div class="back-to-home">
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Вернуться на главную
+                </a>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Скрипты -->
+    <script src="js/quizzes.js"></script>
+    <script src="js/mobile-optimization.js"></script>
+    <script src="js/holiday.js"></script>
+</body>
+</html>

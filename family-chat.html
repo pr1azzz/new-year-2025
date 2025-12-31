@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Семейный чат | Наш 2024</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Дополнительные стили для чата */
+        .chat-page {
+            background: linear-gradient(135deg, #0a2e38 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .back-to-calendar {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 255, 170, 0.1);
+            color: #0fa;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-bottom: 30px;
+            border: 2px solid #0fa;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-calendar:hover {
+            background: #0fa;
+            color: #0a2e38;
+            transform: translateX(-5px);
+        }
+        
+        .server-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 15px;
+        }
+        
+        .server-status.online {
+            background: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+            border: 1px solid #2ecc71;
+        }
+        
+        .server-status.offline {
+            background: rgba(231, 76, 60, 0.2);
+            color: #e74c3c;
+            border: 1px solid #e74c3c;
+        }
+        
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        
+        .status-indicator.online {
+            background: #2ecc71;
+            box-shadow: 0 0 10px #2ecc71;
+            animation: pulse 2s infinite;
+        }
+        
+        .status-indicator.offline {
+            background: #e74c3c;
+        }
+    </style>
+</head>
+<body class="chat-page">
+    <div class="container">
+        <!-- Шапка -->
+        <header>
+            <a href="index.html" class="back-to-calendar">
+                <i class="fas fa-arrow-left"></i>
+                Назад к календарю
+            </a>
+            <div class="server-status offline" id="serverStatus">
+                <div class="status-indicator offline"></div>
+                <span>Сервер не подключен</span>
+            </div>
+        </header>
+
+        <!-- Основной контент чата -->
+        <div class="chat-container-full">
+            <div class="chat-header">
+                <h1><i class="fas fa-comments"></i> Семейный чат</h1>
+                <p class="chat-subtitle">Общайтесь в реальном времени всей семьёй! 💬</p>
+            </div>
+
+            <!-- Контейнер чата будет загружен через JS -->
+            <div id="chatApp"></div>
+        </div>
+
+        <!-- Инструкция -->
+        <div class="chat-instructions">
+            <h3><i class="fas fa-info-circle"></i> Как пользоваться чатом:</h3>
+            <ol>
+                <li>Выберите своё имя из списка или введите своё</li>
+                <li>Напишите сообщение и нажмите "Отправить"</li>
+                <li>Ваше сообщение увидят все члены семьи в реальном времени</li>
+                <li>Чтобы чат работал, сервер должен быть запущен</li>
+            </ol>
+            <div class="server-info">
+                <p><strong>Адрес сервера:</strong> <code id="serverUrl">http://localhost:3000</code></p>
+                <p><strong>Статус:</strong> <span id="connectionStatus">Проверка подключения...</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключение Socket.io клиента -->
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <!-- Клиентская часть чата -->
+    <script src="js/family-chat-frontend.js"></script>
+    
+    <script>
+        // Проверка подключения к серверу
+        function checkServerConnection() {
+            const serverUrl = 'http://localhost:3000';
+            
+            fetch(`${serverUrl}/health`)
+                .then(response => response.json())
+                .then(data => {
+                    const statusElement = document.getElementById('serverStatus');
+                    const statusText = document.getElementById('connectionStatus');
+                    
+                    statusElement.className = 'server-status online';
+                    statusElement.querySelector('.status-indicator').className = 'status-indicator online';
+                    statusElement.querySelector('span').textContent = 'Сервер онлайн';
+                    statusText.textContent = '✅ Подключено к серверу чата';
+                    
+                    document.getElementById('serverUrl').textContent = serverUrl;
+                })
+                .catch(error => {
+                    console.log('Сервер не отвечает, запустите его');
+                    document.getElementById('connectionStatus').innerHTML = 
+                        '❌ Сервер не запущен. <br><br>' +
+                        '<strong>Чтобы запустить сервер:</strong><br>' +
+                        '1. Откройте терминал в папке <code>server</code><br>' +
+                        '2. Выполните команду: <code>npm start</code><br>' +
+                        '3. Обновите эту страницу';
+                });
+        }
+        
+        // Проверяем при загрузке
+        document.addEventListener('DOMContentLoaded', checkServerConnection);
+        
+        // Проверяем каждые 10 секунд
+        setInterval(checkServerConnection, 10000);
+    </script>
+</body>
+</html>

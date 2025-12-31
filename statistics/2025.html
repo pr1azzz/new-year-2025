@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статистика викторин 2025</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="apple-touch-icon" href="../images/favicon.png">
+    <meta name="theme-color" content="#0a2e38">
+    
+    <!-- Стили -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/statistics.css">
+
+    <!-- После основного CSS -->
+    <link rel="stylesheet" href="../css/animations.css">
+    
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Иконки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка с навигацией -->
+        <header class="header">
+            <div class="snowflakes"></div>
+            
+            <nav class="main-nav">
+                <a href="../index.html" class="nav-link">
+                    <i class="fas fa-home"></i> Главная
+                </a>
+                <a href="../quizzes.html" class="nav-link">
+                    <i class="fas fa-gamepad"></i> Играть
+                </a>
+                <a href="2025.html" class="nav-link active">
+                    <i class="fas fa-trophy"></i> Статистика
+                </a>
+                <div class="years-dropdown">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i> Годы
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="2025.html" class="active">2025</a>
+                        <a href="2026.html">2026</a>
+                    </div>
+                </div>
+            </nav>
+            
+            <div class="year-title">
+                <h1>Статистика 2025</h1>
+                <p class="subtitle">Результаты семейных викторин</p>
+            </div>
+            
+            <div class="decoration">
+                <div class="ornament left"></div>
+                <div class="ornament right"></div>
+            </div>
+        </header>
+
+        <!-- Основное содержимое статистики -->
+        <main class="statistics-container">
+            <!-- Пьедестал победителей -->
+            <div class="winners-podium">
+                <!-- Первое место -->
+                <div class="podium-step first-place">
+                    <div class="place-label">🥇 1 МЕСТО</div>
+                    <div class="winner-card">
+                        <div class="winner-medal">👑</div>
+                        <h2 class="winner-name">Имя</h2>
+                        <div class="winner-score">0 очков</div>
+                        <div class="winner-details">Победил в 0 из 7</div>
+                    </div>
+                </div>
+                
+                <!-- Второе место -->
+                <div class="podium-step second-place">
+                    <div class="place-label">🥈 2 МЕСТО</div>
+                    <div class="winner-card">
+                        <div class="winner-medal">⭐</div>
+                        <h2 class="winner-name">Имя</h2>
+                        <div class="winner-score">0 очков</div>
+                        <div class="winner-details">Победил в 0 из 7</div>
+                    </div>
+                </div>
+                
+                <!-- Третье место -->
+                <div class="podium-step third-place">
+                    <div class="place-label">🥉 3 МЕСТО</div>
+                    <div class="winner-card">
+                        <div class="winner-medal">🌟</div>
+                        <h2 class="winner-name">Имя</h2>
+                        <div class="winner-score">0 очков</div>
+                        <div class="winner-details">Победил в 0 из 7</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Статистика по викторинам -->
+            <section class="quizzes-stats">
+                <h2 class="section-title">
+                    <i class="fas fa-gamepad"></i> Результаты викторин
+                </h2>
+                
+                <!-- Навигация по годам -->
+                <div class="years-navigation">
+                    <a href="2025.html" class="year-link active">2025</a>
+                    <a href="2026.html" class="year-link">2026</a>
+                </div>
+                
+                <!-- Сетка викторин -->
+                <div class="quizzes-grid">
+                    <!-- Викторина 1 -->
+                    <div class="quiz-card">
+                        <h3 class="quiz-title">
+                            <i class="fas fa-question-circle"></i> Дополнительная викторина
+                        </h3>
+                        <p><strong>Дата:</strong> 1 января 2026</p>
+                        <p><strong>Тема:</strong> Мультфильмы</p>
+                        
+                        <div class="quiz-winner">
+                            <div class="winner-icon first-place-icon">1</div>
+                            <div class="winner-info">
+                                <h4>Имя</h4>
+                                <p>0 очков</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Викторина 2 -->
+                    <div class="quiz-card">
+                        <h3 class="quiz-title">
+                            <i class="fas fa-film"></i> Дополнительная викторина
+                        </h3>
+                        <p><strong>Дата:</strong> 1 января 2026</p>
+                        <p><strong>Тема:</strong> Эпоха 80-х</p>
+                        
+                        <div class="quiz-winner">
+                            <div class="winner-icon second-place-icon">2</div>
+                            <div class="winner-info">
+                                <h4>Имя</h4>
+                                <p>0 очков</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Викторина 3 -->
+                    <div class="quiz-card">
+                        <h3 class="quiz-title">
+                            <i class="fas fa-music"></i> Дополнительная викторина
+                        </h3>
+                        <p><strong>Дата:</strong> 1 января 2026</p>
+                        <p><strong>Тема:</strong> ?</p>
+                        
+                        <div class="quiz-winner">
+                            <div class="winner-icon third-place-icon">3</div>
+                            <div class="winner-info">
+                                <h4>Имя</h4>
+                                <p>0 очков</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Добавьте еще 7-12 карточек викторин по аналогии -->
+                </div>
+                
+                <!-- Таблица полных результатов -->
+                <h2 class="section-title">
+                    <i class="fas fa-chart-bar"></i> Общая таблица результатов
+                </h2>
+                
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Место</th>
+                            <th>Участник</th>
+                            <th>Общий счёт</th>
+                            <th>Победы</th>
+                            <th>Лучший результат</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="medal-cell">
+                                    <div class="medal-icon" style="background: #ffd700; color: #0a2e38;">1</div>
+                                    🥇
+                                </div>
+                            </td>
+                            <td><strong>Имя</strong></td>
+                            <td>0</td>
+                            <td>0 из 7</td>
+                            <td>Название (score)</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="medal-cell">
+                                    <div class="medal-icon" style="background: #c0c0c0; color: #0a2e38;">2</div>
+                                    🥈
+                                </div>
+                            </td>
+                            <td><strong>Имя</strong></td>
+                            <td>0</td>
+                            <td>0 из 7</td>
+                            <td>Название (score)</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="medal-cell">
+                                    <div class="medal-icon" style="background: #cd7f32; color: #0a2e38;">3</div>
+                                    🥉
+                                </div>
+                            </td>
+                            <td><strong>Имя</strong></td>
+                            <td>0</td>
+                            <td>0 из 7</td>
+                            <td>Название (score)</td>
+                        </tr>
+                        <!-- Добавьте остальных участников -->
+                        <tr>
+                            <td>4</td>
+                            <td>Имя</td>
+                            <td>0</td>
+                            <td>0 из 7</td>
+                            <td>Название (score)</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Имя</td>
+                            <td>0</td>
+                            <td>0 из 7</td>
+                            <td>Название (score)</td>
+                        <tr>
+                            <td>6</td>
+                            <td>Имя</td>
+                            <td>0</td>
+                            <td>0 из 7</td>
+                            <td>Название (score)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <!-- Кнопка возврата -->
+            <div class="back-to-home">
+                <a href="../index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Вернуться на главную
+                </a>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Скрипты -->
+    <script src="../js/statistics.js"></script>
+    <script src="js/mobile-optimization.js"></script>
+    <script src="../sw.js"></script>
+    <script src="../js/holiday.js"></script>
+</body>
+</html>
